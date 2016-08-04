@@ -1,0 +1,35 @@
+/* CS 154, HW 7
+Nolan Winkler, nolanwinkler */
+
+(1)
+A. block 2 ( 0 x Tseek + 1 x Trot), then block 19 ( 1 x Tseek + 1 x Trot) = 20ms
+/*On outer track, so don't need to move arm then wait until it rotates to 2, 
+then move the arm to the inner track & wait until it rotates to 19*/
+B. block 3 ( 0 x Tseek + 1 x Trot), then block 20 ( 1 x Tseek + 1 x Trot) = 20ms
+/*same logic as A */
+C. block 9 ( 1 x Tseek + 1 x Trot), then block 11 ( 1 x Tseek + 1 x Trot) = 30 ms
+/* on outer track, so need to move to inner track then wait for rotation to 9,
+then move the arm back to outer track and wait for rotation to 11 */
+
+(2)
+A. yes, there is a (more than one, actually) contiguous 3MB span of virtual memory
+where we can put P1, so it can be run. Since we use the lowest addressing, P1 will be
+in address range 0-2.
+
+B. Yes, there is a (more than one, actually) contiguous 3MB span of virtual memory
+where we can put P2, so it can be run. Since we use the lowest addressing, P2 will be
+in address range 5-7.
+
+C. No, there is no contiguous 3MB span of virtual memory where we can put P3
+even though there is a total 3MB of memory available, so it cannot be run.
+
+D. P1's internal fragmentation: 2 MB of 3 MB allocated are wasted
+P2's internal fragmentation: 1 MB of 3 MB allocated are wasted
+P3 isn't run so we don't care about it, but if it could be run it would waste 0MB
+So, the total internal fragmentation: 3 MB of 6 MB wasted
+
+E. The external fragmentation is 3 MB wasted out of 10 MB
+(These 3 MB are at slot 3 and 8-9)
+
+(3)
+/*Don't need anything here, just in wami.c */

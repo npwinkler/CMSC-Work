@@ -1,0 +1,53 @@
+/* Nolan Winkler, nolanwinkler
+HW # 4 */
+
+(1) 
+
+A. ttttttttssbb
+
+B. 
+Operation | 	Address | 	Hit/Miss?  | 	Value
+--------------------------------------------------------
+Read		0x833		Hit		0xD0
+Read		0x00A		Hit		0x4A
+Read		0x006		Hit		0x46
+Read		0xFFE		Hit		0x03
+Read		0x54D		Miss		Unknown
+Write		0x54E		Hit		n/a
+Write		0x007		Hit		n/a
+Read		0x44C		Miss		Unknown
+Read		0xFFE		Miss		0x03
+
+
+(2)
+
+A. Case 1; C=512, DMAP, B=16 : Miss Rate = 100%
+C=S*E*B => S = 32
+x[0][i] and x[1][i] will go to the same sets because 0x000 and 0x200 have the same s bits and this stays true for all other addresses of x[0][i] and x[1][i]
+
+B. Case 2; C=1024 i.e. double the size: Miss Rate = 25%
+C = 1024 = S * E *B => S = 64
+With S=64, s=6 so now x[0][i] and x[1][i] go to different sets and thus we miss, hit the next 3 & miss again, hit the next 3 again...
+
+
+(The other ways that we could change the cache size would be by increasing the size of the blocks or the associativity but it seems like B=16 & E=2 is fixed from part A - if not, increasing the block size but not the number of sets would also result in a 100% miss rate as they'd still get mapped to the same sets and increasing E would help as it does in C)
+
+C. Case 3, C = 512, E=2, B=16, LUR : Miss Rate = 25%
+x[0][i] and x[1][i] will go to the same sets as in case 1, but now with 2 slots in set 1 they'll be held simultaneously as the LRU policy will overwrite the block from the same array (once we get thru half the array) so we get the same hit/miss pattern as in case 2
+
+D. Increasing the cache size (which will happen by increasing the number of sets as per Piazza and by taking the B=16 is fixed from part C route) will still result in a miss rate = 25%. While we add more sets so x[0][0] and x[0][64] no longer get mapped to the same set as they would in part C, this just changes a conflict miss into a compulsory miss as the LRU works nicely for us in C.
+
+E. Yes, a larger block size will help to reduce the miss rate because we will now be holding more ints in each slot of each set so if we e.g. double it instead of missing, hitting 3, and missing we will miss, hit 7, and miss giving us a miss rate = 12.5%
+
+(3)
+A. First we define F_AL = 100% - (F_LD + F_ST + F_BJ) and S = 100%-R to improve readability.
+
+L_AVG = L_AL * F_AL + L_BJ * F_BJ + F_LD * (R*H + S*M) + F_ST * (R*H + S*M)
+
+If you really want it just in terms of the original variables, 
+L_AVG =  L_AL * (100% - (F_LD + F_ST + F_BJ)) + L_BJ * F_BJ + F_LD * (R*H + (100%-R)*M) + F_ST * (R*H + (100%-R)*M)
+
+B.
+L_AVG = (1.1 cycles/alu op) * (46% alu op/instr) + (3.0 cycles/branch jump) * (20% branch jump/instr) + (22% loads/instr) * (60% hits/look * 1 cycle/hit + 40% miss/look * 120 cycle/miss) + (12 % stores/instr) * (60% hits/look * 1 cycle/hit + 40% miss/look * 120 cycle/miss) = 17.63 cycles / instruction ---sig--figs-> 18. cycles/instruction
+
+

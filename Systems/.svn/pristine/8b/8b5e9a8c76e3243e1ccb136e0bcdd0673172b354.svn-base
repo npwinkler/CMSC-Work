@@ -1,0 +1,12 @@
+# CS154 Project 5 IM Server; demo text client
+
+CC=gcc
+CFLAGS= -Wall -Werror -O1 -g
+IPATH= -Iimp
+LPATH= -Limp
+
+txtimc: txtimc.c
+	$(CC) $(CFLAGS) $(IPATH) -o txtimc txtimc.c $(LPATH) -Wl,-rpath,imp -lpthread -limp -lreadline
+
+clean:
+	rm -f txtimc

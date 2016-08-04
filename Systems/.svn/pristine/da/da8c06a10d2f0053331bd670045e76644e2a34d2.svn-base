@@ -1,0 +1,28 @@
+nolanwinkler hw6 grade: 42/50
+
+Graded files from svn revision 58
+
+--------------------------------------
+Question 1 points and comments: 12/15
+B) the CPU enable exception 0 and loads the address from entry 0
+of the exception handler table. loads this address (0xC0005000)
+into %eip and executes the exception handler
+
+Graded by: Joe Ellis (ellisjoe)
+--------------------------------------
+
+Question 2 points and comments: 10/15
+You need to preserve the value of callee-save register %ebx. Use pushl and popl. You're off by 4 in values. Arg2 should be 8(%ebp) and arg3 should be 12 offset. 
+
+Graded by: Rachel Hwang (rah1)
+--------------------------------------
+
+Question 3 points and comments: 20/20
+Perfect!
+
+Graded by: Bob Ni (bobni)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us (the cs154 graders).
+Notify us by filling out and submitting the form here: http://goo.gl/MxrdVo

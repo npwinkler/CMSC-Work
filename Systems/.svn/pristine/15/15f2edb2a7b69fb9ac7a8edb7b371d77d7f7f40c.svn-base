@@ -1,0 +1,76 @@
+ls /stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/ > gooduser_rd_1
+ls /stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/ -l > gooduser_rd_2
+cd
+cd ../../
+pwd
+/
+cd /stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/src/mpi
+pwd
+/stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/src/mpi
+ls
+attr
+coll
+comm
+datatype
+debugger
+errhan
+group
+info
+init
+io
+Makefile.mk
+misc
+pt2pt
+rma
+romio
+spawn
+timer
+topo
+ls -l
+total 72
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 attr
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 coll
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 comm
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 datatype
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 debugger
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 errhan
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 group
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 info
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 init
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 io
+-rw-r--r--  1 zar1 15400 2322 Feb 20 00:21 Makefile.mk
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 misc
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 pt2pt
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 rma
+drwxr-sr-x 11 zar1 15400 4096 Feb 20 11:44 romio
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 spawn
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 timer
+drwxr-sr-x  2 zar1 15400 4096 Feb 20 11:41 topo
+cd ./
+pwd
+/stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/src/mpi
+cd timer
+pwd
+/stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/src/mpi/timer
+cd ../
+pwd
+/stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/src/mpi
+cd ../../../; pwd; cd /
+/stage/classes/archive/2014/spring/15400/p4shell
+pwd
+/
+cd ../
+pwd
+/
+cal 10 2008; pwd; pwd
+    October 2008      
+Su Mo Tu We Th Fr Sa  
+          1  2  3  4  
+ 5  6  7  8  9 10 11  
+12 13 14 15 16 17 18  
+19 20 21 22 23 24 25  
+26 27 28 29 30 31     
+                      
+/
+/
+exit

@@ -1,0 +1,15 @@
+/* Nolan Winkler CS 154 HW #1 */
+/* nolanwinkler, 428237 */
+
+/* Problem 1 */
+  foo = ~255;
+  endian = *((char *) (&foo));
+
+/* Problem 2 */
+A. (x^(~0))&&1
+B. x&&1
+C. ((x^(~0)) >> (8*sizeof(int)-4))&&1
+D. ((x^0) >> (8*sizeof(int)-4))&&1
+E.![(x ^ [x >> (8*sizeof(int)-8)]) << (8*sizeof(int)-8)] 
+/* ((x>>(8*sizeof(int)-8))<<(8*sizeof(int)-8))==(x<<(8*sizeof(int)-8)) might be clearer */
+F. (x&1431655765)&&1

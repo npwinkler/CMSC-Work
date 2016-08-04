@@ -1,0 +1,36 @@
+/* CS 154, HW # 8
+Nolan Winkler, nolanwinkler */
+
+(1)
+/*Some of the lectures, only intro & conclusion sections, I was able to access 
+at http://cseweb.ucsd.edu/users/varghese/TEACH/cs123/ were helpful. */
+
+A. (1) Morse code as used for wired telegraphy best fits into the link layer
+as it is a transmission of data between 2 hosts connected by the same electric
+wire that the data is physically transmitted over
+B. (4) HTCPCP is built on top of HTTP, which is itself in the application layer.
+Also, it presupposes a stable connection between the client and the coffee pot server/
+C. (1) IPoAC best fits into the link layer as it is transmission of data between
+2 hosts by a physical means (pigeon) that is a single link.
+D. (3) This modified version of TCP would still best fit at the transport layer
+as it still allows process-to-process communication, doesn't care about the
+underlying network. Making it non-lossless doesn't change it because UDP is also
+at the transport layer.
+E. (3) The Security Flag in the IPv4 Header best fits into the
+transport layer because it is implement on top of IP, so is at least this high
+and doesn't care about the underlying network it just implements when to transfer
+messages correctly based on whether or not the evil bit is set.
+F. (3) The Licklider Transmission Protocol best fits in with the transport layer
+as it already runs over a link layer and it governs making sure which data is sent
+how reliably and splits off how applications communicate specific things
+G. (2) The UN interpretation service best fits into the internet layer, because it
+is providing a conversion between the language spoken by one network of people to
+the language spoken by another network of people so that they can communicate
+with each other.
+H. (4) This white board protocol best fits into the application layer as it's built 
+over and presupposes a stable TCP/IP connection and takes the data produced by the
+user acting on say, their own computer application at home, and sending it to the
+application that determines what the shared white board does.
+
+(2) 
+No text required here.

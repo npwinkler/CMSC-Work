@@ -1,0 +1,17 @@
+4 users:
+alice
+- david
+- bob requested
+- carol
+.
+bob
+- alice pending
+- carol
+.
+carol
+- bob
+- alice
+.
+david
+- alice
+.
