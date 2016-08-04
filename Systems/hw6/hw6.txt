@@ -1,0 +1,64 @@
+/* Nolan Winkler, nolanwinkler
+CS 154, HW # 6 */
+
+(1)
+A. Exception # | Code Address
+	0		0xC0005000
+B. The program counter points to 0x08001000, so the instruction "idivl %ebx" gets
+executed, but since %ebx is zero, control flow will jump such that the program counter
+will point to 0xC0005000, the divide by zero exception handler, which will then
+execute its first instruction.
+
+(2)
+.text
+.globl readin
+readin:
+pushl %ebp
+movl %esp, %ebp
+----my code ----
+movl $3, %eax
+movl $0, %ebx
+movl 4(%ebp), %ecx
+movl 8(%ebp), %edx
+int $0x80
+-----my code -----
+popl %ebp
+ret
+
+(3)
+A. 
+1 P 16 0
+2 P 24 101
+3 C 20 0
+4 P 8  101
+5 C 8 0
+6 C 10 0
+7 P 27 101
+
+B.
+1 P 16 0
+2 P 24 101
+3 C 20 0
+4 C 8 0
+5 C 10 0
+6 P 27 101
+
+In A, the the child signaled to the parent first, then the parent signaled to the child.
+In B, this has changed because the parent signals to the child first and thus the child gets killed before it can signal to the parent
+
+C.
+1 P 16 0
+2 P 24 101
+3 C 8 0
+4 C 10 0
+5 P 27 101
+In B, the child started executing before the parent signaled to it so it could print its PID before being killed
+In C, this has changed because the parent sent the signal to the child before the child could execute its print statement
+
+D.
+1 P 16 0
+2 C 20 0
+3 P 8 0
+4 P 10 0
+In C, the parent updated its value of forkret to be the return value from fork (i.e. the child's PID) before the child signaled it
+In D, this has changed because the child got so far ahead of the parent that it signaled the parent before the parent's forkret was updated and thus the parent can itself be killed by the child's signal.

@@ -1,0 +1,65 @@
+nolanwinkler cs154 grade: 90.797
+
+Homeworks:
+       hw1  (2.5%):     19/22 == 86.363%
+       hw2  (2.5%):     40/40 == 100.00%
+       hw3  (2.5%):     32/32 == 100.00%
+       hw4  (2.5%):     55/55 == 100.00%
+       hw5  (2.5%):     40/40 == 100.00%
+       hw6  (2.5%):     42/50 == 84.000%
+       hw7  (2.5%):     55/55 == 100.00%
+       hw8  (2.5%):     39/41 == 95.121%
+       hw9  (2.5%):     52/52 == 100.00%
+                     -------------------
+    hw avg (22.5%):           == 96.165%
+
+Projects:
+p1bitmanip  (6.5%):    84/100 == 84.000%
+    p2bomb  (6.5%):     63/60 == 105.00%
+   p3cache  (6.5%):  95.0/100 == 95.000%
+   p4shell  (6.5%):   100/100 == 100.00%
+     p5ims  (6.5%): 62.307/100 == 62.307%
+
+Exams:
+     exam1   (20%):    82/100 == 82.000%
+     exam2   (25%):    95/100 == 95.000%
+
+(Current grade, based on 100.0% of assignments)
+   overall (100.0%):           == 90.797%
+
+           |<-- 0                                                                            100 -->| median:
+       hw1 . . . . . . . . . . . . . . . . . . . . -------------------------=======<m>==X========---- 81.8182
+       hw2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .------------------====<m>-X 96.25
+       hw3 . . . . . . . . . . . . . . . . . . . . . . . . . ----------------------------========<m>X 96.875
+       hw4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .----------------====<m>=X 96.3636
+       hw5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ------------------======<m>==X 95
+       hw6 . . . . . . . . . . . . . . . . . . . . . . . . . . . .--------------------X====<m>==----- 90
+       hw7 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . -----------------------===<X 100
+       hw8 . . . . . . . . . . . . . . . -------------------------------============<m>======---X--.  82.9268
+       hw9 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .----------------------=========<X 100
+     hwAvg . . . . . . . . . . . . . . . . . . . . . . . . . . . . ---------------------===<m>===X-.  90.8188
+p1bitmanip . . . . . . . . . . . . . . . . . . . . . . .------------------------------X---=========<m 100
+    p2bomb . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ------<X 103.333
+   p3cache . . .---------------------------------------------------------------------=======<m>=X---- 92
+   p4shell . . .------=============================================================<m>==============X 82
+     p5ims . . . . . . . . . ------------=========================<X>================================ 63.23
+     exam1 . . . . . . . . . . . . . . . . . . . ---------------=========<m>=======-X--------. . . .  71
+     exam2 . . . . . . . . . . . . . . . . . . . . . . . . . . . ------------------====<m>===---X. .  86
+   overall . . . . . . . . . . . . . . . . . . . . . . . . . . . ------------=======<m>====-X--- . .  82.9988
+
+The plots above (best seen with a fixed-width font) depict the distribution of grades
+(in a [0,100] range) for the whole class, with one line per grade component.
+The "---" spans from the 5th to the 95th percentile, containing 90% of the class.
+The "===" spans from the 25th to the 75th percentile, containing 50% of the class.
+The "<m>" marks the median, the grade that splits the grade distribution in half.
+Your grade is indicated with a single "X" (which overwrites one character of the
+plot, including possibly the "<", "m", or ">" of the median indicator).
+
+The mapping from numeric to letter grades will not be known until the end of the quarter.
+
+These grades were gathered from your per-assignment grades and processed with scripts
+created for cs154. This file may not reflect recent corrections to per-assignment grades.
+If you believe there is an error in some individual assignment grade, double-
+check the per-assignment gradefile. If you think information above does not match
+what you think you got on an assignment, or if you believe there is an error in the
+arithmetic here, either ask (privately) on Piazza or email cs154-profs@googlegroups.com

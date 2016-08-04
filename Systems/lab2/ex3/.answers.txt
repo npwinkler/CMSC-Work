@@ -1,0 +1,10 @@
+1. 0x24 bytes are being reserved for locals on the stack.
+   This is shown in the instruction "sub $0x24, %esp".
+
+2. "topsecret". It can be displayed with the print command:
+   p {char*}0x80495d0
+
+3. b *0x0804837f
+
+4. 11 is the value returned. By using the 'info registers' command,
+   you can see the value in the %eax register.

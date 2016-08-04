@@ -1,0 +1,21 @@
+final score: 63
+bomb108 nolanwinkler+lwbertels Thu Apr 24 16:12 valid
+    Defused:   7
+    Explosion: 2
+    Score:     63
+
+###### bomb108 created: Sun Apr 20 15:03:19 2014 ######
+Sun Apr 20 16:18:10 2014: phase 1 exploded: 'continue'
+Mon Apr 21 20:55:29 2014: phase 1 defused: 'Everything you hated about high school, on a neighborhood scale 63'
+Mon Apr 21 22:21:05 2014: phase 2 defused: '2 3 6 11 22 43'
+Tue Apr 22 14:20:59 2014: phase 3 defused: '6 1245'
+Tue Apr 22 16:12:40 2014: phase 4 defused: '12 3'
+Tue Apr 22 17:02:50 2014: phase 5 defused: 'XXXXXX'
+Wed Apr 23 17:27:22 2014: phase 6 defused: '2 6 5 1 4 3'
+Thu Apr 24 12:21:37 2014: phase 3 defused: '6 1245 9CjuQipfojy'
+Thu Apr 24 12:22:14 2014: phase 4 defused: '12 3 9CjuQipfojy'
+Thu Apr 24 12:33:49 2014: phase 6 exploded: '2 6 9CjuQipfojy 5 1 4 3'
+Thu Apr 24 13:14:08 2014: phase 4 defused: '12 3 9CjuQipfojx'
+Thu Apr 24 13:17:05 2014: phase 4 defused: '12 3 8CjuQipfojy'
+Thu Apr 24 13:26:21 2014: phase 4 defused: '12 3 8BitPhoenix'
+Thu Apr 24 16:12:37 2014: phase 7 defused: '154'

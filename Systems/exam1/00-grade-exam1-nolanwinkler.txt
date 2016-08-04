@@ -1,0 +1,18 @@
+nolanwinkler exam1 grade: 82/100
+
+  Question 1: 14 / 16
+  Question 2: 6 / 8
+  Question 3: 6 / 6
+  Question 4: 6 / 12
+  Question 5: 12 / 12
+  Question 6: 13 / 15
+  Question 7: 9 / 11
+  Question 8: 16 / 20
+
+Questions were graded by TAs and professors. If you believe a question
+was graded incorrectly, come to the office hours of either Prof Hoffmann
+or Prof Kindlmann, or email cs154-profs@googlegroups.com if your schedule
+prevents you from coming to their office hours. If we change the grade
+because we think there was in fact a grading error, the grade may go
+up or down.  You have two weeks (from when exam1 grades are returned)
+to bring our attention to exam1 grading errors.

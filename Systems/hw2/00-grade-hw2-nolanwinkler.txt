@@ -1,0 +1,23 @@
+nolanwinkler hw2 grade: 40/40
+
+Graded files from svn revision 28
+
+--------------------------------------
+Question 1 points and comments: 20/20
+Perfect!
+
+Graded by: Rachel Hwang
+--------------------------------------
+
+Question 2 points and comments: 20/20
+Perfect work!
+
+Graded by: Bob Ni and Gordon Kindlmann
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week
+(starting from when the grade was returned) to notify us (the cs154 graders).
+Notify us by posting a private question on the class Piazza page, in the
+"hw2" folder there. To help us quickly find and re-evaluate your work,
+begin your question by giving: (1) your CNetID, (2) the HW question # involved,
+and (3) the question's Grader, named above.

@@ -1,0 +1,56 @@
+README
+
+This directory contains nine test files for CS 154 Project 4, along with
+expected output. To get the same outputs, you may have to test your code
+on CSIL machines.
+
+Input files:
+  1. gooduser (32 points)
+    basic build-in commands, basic ls, multiple commands in one line, basic
+    redirection, empty command.
+  2. buildin_wrongformat (8 points)
+    Wrong format for build-in commands (cd, pwd and exit)
+  3. cd_toFolderNotExist (3 points)
+    cd to folder does not exist
+  4. badcommand (5 points)
+    line too long, command does not exist.
+  5. complexCommand (8 points)
+    ls with complex arguments, complex empty commands, spaces between
+    arguments.
+  6. multipleCommand (12 points)
+    multiple commands in one line, some may be invalid
+  7. Complex redirection (18 points)
+    test redirection parsing with spaces before and after '>',
+    redirection to a file already existing, redirection to
+    ./afolderdoesnotexit/file, >[optional spaces], 
+    [optional spaces]>[optional spaces], two '>' in one line
+  8. Empty file (1 point)
+  9. 1KCommand (3 points)
+    a test contains a huge command
+  10. simplels (0 points)
+    a quick sanity check
+
+Output files:
+  For each input file "iaminputfile", "iaminputfile.stdout" contain the correct
+  output from stdout when running the program using iaminputfile, and 
+  "iaminputfile.stderr" contain the correct output from stderr when running the
+  program using iaminputfile. If one test "iaminputfile2" contains redirection,
+  then "iaminputfile2_rd_i" is the output file if the redirection is valid.
+
+The following tests have no file to be released:
+  10. Call ./myshell with more than one argument. (2 points)
+  11. call ./myshell with a file that does not exist. (2 points)
+  12. File name. (1 point)
+  13. Readme, makefile. (5 points)
+
+While testing your code, no output files should exist in the output directory
+(the one where binary myshell is located) before you run your program.
+So one correct way to test your code is:
+  - put all the batch files in a test/ folder
+  - then run:
+    ./myshell test/testName 1>testName.stdout 2>testName.stderr
+    diff testName.stdout test/testName.stdout
+    diff testName.stderr test/testName.stderr
+    diff testName_rd_x test/testName_rd_x
+
+NOTE: If you can pass these tests exactly, you will be getting a 100.

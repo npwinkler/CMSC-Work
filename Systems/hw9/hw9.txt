@@ -1,0 +1,40 @@
+/* CS 154, HW # 9 */
+/* Nolan Winkler, nolanwinkler */
+
+(1)
+A. 100 bytes / open file descriptor structure * 200 clients whose connfd's haven't
+been closed (i.e. 200 file descriptor structs with refcnt = 1) = 20000 bytes of memory leaked
+
+B. 0 bytes of memory will be leaked as when the child exits, the OS closes its 
+descriptor table, so it is no longer pointing at the listenfd struct & thus after
+we service the 200 clients, only the parent is still pointing at it as it was before.
+
+(2)
+
+Variable instance	Ref by main?		Ref by T0?		Ref by T1?
+cnt.p0			No			Yes			No
+cnt.p1			No			No			Yes
+i.m			Yes			Yes			Yes
+msgs.m			Yes			Yes   			Yes
+myid.p0			No			Yes			No
+myid.p1			No			No 			Yes
+
+(3)
+
+A. Pairs of mutexes that Thread 1 can hold: A&B, A&C, A&D
+Pairs of mutexes that Thread 2 can hold: C&D, B&C, B&D
+
+B. There is no overlap beteween the set of pairs of mutexes thread 1 can hold and
+the set of pairs of mutexes thread 2 can hold
+
+C. There is no potential for deadlock, as for each pair of mutexes (s,t) in the program
+only one thread holds both s and t so it locks them in the same order as all other threads
+that hold both s and t as there are no other threads that hold s and t.
+
+(4)
+
+A. Monday is pretty good for HW, given that Wednesday/Thursday would be awful for HW to be due with the projects and nobody wants to do homework on a Friday. Tuesday is the only other day that would work, and it might be better because then you could ask questions to the TAs during lab, but that's not that huge of a difference. While the labs maybe give you useful knowledge for the rest of your programming, I feel the GDB one was the only one that was actually instrumental to the class or the projects, so I don't think the potential of people doing HW during lab instead of the lab would actually be that detrimental. So, Tuesday is ideal but Monday is definitely still very good.
+
+B. CSIL closes at 1AM, so I see no reason to not always make the HW due at 1AM instead of midnight. If it's going to be due on Monday or Tuesday, definitely give the whole day. If HW would be due on Wednesday, having it due at class time would also be fine.
+
+C. See above.

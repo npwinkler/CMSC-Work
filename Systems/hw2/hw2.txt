@@ -1,0 +1,31 @@
+Nolan Winkler, nolanwinkler
+HW # 2
+
+(1)
+operand 			value 		mode
+-------------------------------------------------------------------------------
+A. (%ecx)			0x09		Indirect
+B. 0x12(%ecx)			unknown	  	see below
+we don't know endianness, so we don't know which bytes of 0x54 and 0x42 we get
+C. 548				0x54		Absolute
+D. leal (%eax,%esi)		0x214		leal(Indexed)
+E. (%eax, %esi)			0xBC		Indexed
+F. 0x100(%edi, %edx, 0x20) 	0x42		Scaled Indexed
+G. leal 0x123(%edi, %esi, 0x11) 0x267		leal(Scaled Indexed)
+H. $251				0xFB		Immediate
+I. (,%esi, 0x88)		0x42		Scaled Indexed
+J. leal 0x54(%edi)		0x154		leal(Base + Displacement)
+
+(2)
+instruction			Destination		Value
+------------------------------------------------------------------------------
+A. incl %esi			%esi			0x5
+B. xorl %ebx, %ebx		%ebx			0x0
+C. decl (%eax)			0x210			0xAA
+D. subl 0x21C, %edi		%edi			0xF7
+E. notl %edx			%edx			0xFFFFFFFE
+F. shll %esi, (%ecx)		0x21C			0x90
+G. subl $0x100, %ecx		%ecx			0x11C
+H. imull %edi, (%eax, %esi)	0x214			0xBC00
+I. orl (%ecx), %eax		%eax			0x219
+J. shrl %esi,(%edi,%esi,72)	0x220			0x4

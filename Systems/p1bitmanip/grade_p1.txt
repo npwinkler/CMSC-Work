@@ -1,0 +1,31 @@
+gcc -O -Wall -m32 -lm -o btest bits.c btest.c decl.c tests.c 
+gcc -O -Wall -m32 -lm -o btest bits.c btest.c decl.c tests.c 
+
+
+Correctness Results	Perf Results
+Points	Rating	Errors	Points	Ops	Puzzle
+4	4	0	2	3	absVal
+3	3	0	2	19	addOK
+2	2	0	2	9	allEvenBits
+2	2	0	2	16	byteSwap
+2	2	0	2	7	divpwr2
+3	3	0	2	8	ezThreeFourths
+2	2	0	2	10	fitsBits
+4	4	0	2	67	greatestBitPos
+4	4	0	2	51	ilog2
+2	2	0	2	2	implication
+4	4	0	2	12	isPower2
+4	4	0	2	5	logicalNeg
+3	3	0	2	10	multFiveEighths
+3	3	0	2	10	rotateLeft
+4	4	0	2	30	satAdd
+4	4	0	2	9	sm2tc
+4	4	0	2	9	tc2sm
+4	4	0	2	11	trueThreeFourths
+0	4	1	0	0	trueFiveEighths
+
+Score = 94/100 [58/62 Corr + 36/38 Perf] (288 total operators)
+Subtraction: 10
+FinalScore: 84
+Reason: code can't pass dlc compiler
+Functions not working: trueFiveEighths

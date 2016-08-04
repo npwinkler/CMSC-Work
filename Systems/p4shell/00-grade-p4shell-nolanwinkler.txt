@@ -1,0 +1,128 @@
+https://phoenixforge.cs.uchicago.edu/svn/lwbertels-nolanwinkler-cs154-2014
+Grading revision: 60
+
+$ make
+gcc -Wall -Werror -o myshell myshell.c
+
+$ ./test-scripts/grade.py
+----------------------------------
+Running batch file: gooduser
+Diffing gooduser.stdout
+
+
+Diffing gooduser.stderr
+
+
+Diffing gooduser_rd_1
+
+
+Diffing gooduser_rd_2
+
+
+gooduser            32	32
+----------------------------------
+Running batch file: buildin_wrongFormat
+Diffing buildin_wrongFormat.stdout
+
+
+Diffing buildin_wrongFormat.stderr
+
+
+buildin_wrongFormat 8	8
+----------------------------------
+Running batch file: cd_toFolderNotExist
+Diffing cd_toFolderNotExist.stdout
+
+
+Diffing cd_toFolderNotExist.stderr
+
+
+cd_toFolderNotExist 3	3
+----------------------------------
+Running batch file: badCommand
+Diffing badCommand.stdout
+
+
+Diffing badCommand.stderr
+
+
+badCommand          5	5
+----------------------------------
+Running batch file: complexCommand
+Diffing complexCommand.stdout
+
+
+Diffing complexCommand.stderr
+
+
+complexCommand      8	8
+----------------------------------
+Running batch file: multipleCommand
+Diffing multipleCommand.stdout
+
+
+Diffing multipleCommand.stderr
+
+
+multipleCommand     12	12
+----------------------------------
+Running batch file: complexRedirection
+Diffing complexRedirection.stdout
+
+
+Diffing complexRedirection.stderr
+
+
+Diffing complexRedirection_rd_1
+
+
+Diffing complexRedirection_rd_2
+
+
+Diffing complexRedirection_rd_3
+
+
+Diffing complexRedirection_rd_4
+
+
+Diffing complexRedirection_rd_5
+
+
+Diffing complexRedirection_rd_6
+
+
+Diffing complexRedirection_rd_7
+
+
+Diffing complexRedirection_rd_8
+
+
+Diffing complexRedirection_rd_9
+
+
+complexRedirection  18	18
+----------------------------------
+Running batch file: emptyInput
+Diffing emptyInput.stdout
+
+
+Diffing emptyInput.stderr
+
+
+emptyInput          1	1
+----------------------------------
+Running batch file: 1KCommand
+Diffing 1KCommand.stdout
+
+
+Diffing 1KCommand.stderr
+
+
+1KCommand           3	3
+two arguments       2	2
+does not exist      2	2
+File name           1	1
+Makefile and README 5	5
+total               100	100
+
+Final Grade: 100

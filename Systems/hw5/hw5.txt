@@ -1,0 +1,36 @@
+/* CS 154 HW # 5
+Nolan Winkler, nolanwinkler */
+
+(1)
+
+A. Line 4 of the assembly corresponds to the expression *pb on line 4 of the source code
+B. This would change the effect of addto when pb points to an element of arr, such that line 4 would be updating itself,
+so that we would not be adding a constant but rather a changing value to the elements of the array.
+C. This, when we access the same memory in two different ways, is called memory aliasing.
+D.
+void addto(int * arr, int *pb, int n) {
+	int i;
+	int pbnum = *pb;
+	for (i=0; i<n; i++ ) {
+		arr[i] += pbnum;
+	}
+}
+
+(2)
+
+A. The execution of a systems call gets done by a special handler in kernel mode whereas normal library functions get done in user mode. Also, we use the assembly instruction int for system calls and parameters are passed via registers, not the stack.
+
+B. system calls and library calls are given different section numbers in man, which describes system calls as functions provided by the kernel and library calls as functions within program libraries. Also, system calls almost always have <unistd.h> as their #include statement. 
+
+C. 
+System calls
+fork - create a new (almost exact) copy of the process currently running, which will be the child of the current process (the parent)
+read - reads a specified number of bytes from a file & stores them in a buffer, if possible
+pause - pauses the current process until signaled
+close - closes a file
+
+Library functions
+log - returns ln(x)
+malloc - allocates memory on the heap of a specified size & returns a pointer to that memory
+fread - reads a specified amount of memory in a specified number of blocks from a file pointer called the stream
+sprintf - writes in a specified format to a string

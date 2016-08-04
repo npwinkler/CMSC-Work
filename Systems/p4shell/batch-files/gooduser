@@ -1,0 +1,24 @@
+ls /stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/ > gooduser_rd_1
+ls /stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/ -l > gooduser_rd_2
+cd
+cd ../../
+pwd
+cd /stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/src/mpi
+pwd
+ls
+ls -l
+cd ./
+pwd
+cd timer
+pwd
+cd ../
+pwd
+cd ../../../; pwd; cd /
+pwd
+cd ../
+pwd
+  
+	
+
+cal 10 2008; pwd; pwd
+exit

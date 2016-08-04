@@ -1,0 +1,44 @@
+/* CS 154, HW 3 
+Nolan Winkler, nolanwinkler */
+
+(1)
+
+int funcQ(int x, int y) {
+	return 3*y+x;
+}
+
+int funcP(int r, int s, int t) {
+	if(s<=0)
+		return funcQ(s,r)+t;
+	else
+		return funcQ(t,s)+r;
+}
+
+(2)
+
+A. x is held in %esi, n is held in %ecx, result is held in %eax, mask is held in %edx
+B. result is initially set to 0, mask is initially set to 3
+C. the test condition for mask is exit the loop if it equals 0, else loop again
+D. mask gets updated by being shifted to the left by n
+E. result gets updated by being bitwise or-ed with the bitwise and of x and the mask
+F. int loop(int x, int n) {
+	int result = 0;
+	int mask;
+	for(mask = 3; mask != 0; mask = mask<<n) {
+		result = (mask&x)|result;
+	}
+	return result;
+   }
+
+(3)
+
+A. &A[i][j][k] = X_a + L(T(S * i + j) + k)
+B. R = 4, S = 10, T = 9
+
+Line 4 has 9*j
+Line 5 has 90*i
+Line 7 has k
+Line 8 tells us L = 4
+gives us a formula X+a + 4(9(10 * i + j) + k) => T = 9, S = 10 
+
+Line 11 tells us sizeof(A) = 1440 => LRST = 1440 => R=1440/LST=1440/360=4

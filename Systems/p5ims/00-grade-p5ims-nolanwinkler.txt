@@ -1,0 +1,66 @@
+Grade file for nolanwinkler p5ims (cs154-2014)
+(Graded by Gordon Kindlmann)
+
+Graded work in repository azhang917-nolanwinkler-cs154-2014, revision 46
+
+============== running make:
+gcc -Wall -Werror -g -O1 -Iimp -c main.c -o main.o
+gcc -Wall -Werror -g -O1 -Iimp -o ims main.o -Limp -Wl,-rpath,imp -lpthread -limp
+
+BUILD OK: make produced ims
+============================
+
++   20 : (out of 20 points) for creating "ims" with clean "make -Wall -Werror"
+Tests results (up to 100 points)
+The tests used here are testing the same thing, in the same way (and named the
+same), as the tests distributed to all students, but the formatting of the
+output is different, to better assign partial credit to partially working
+implementation. In particular, the 20 points for the database are gathered from
+multiple tests that involve the database, instead of just the first 01-db.sh
+test. In general, numbers in parentheses are numbers of lines of differences
+between received and expected results.  Comments from grader are parenthesized
+at the end of the line.  Any fractional correctness points were manually
+determined by grader (usually based on comment provided and/or number of lines
+of difference).
++    4 :          DB test (#1): "1 ( 0 )"
+         Fraction "1" of 4 points towards 20 database points
++   14 :    REGISTER test (#2): "ACK 1 INDB 1"
+         Fraction "ACK 1" of 10 points towards 10 REGISTER points
+         Fraction "INDB 1" of 4 points towards 20 database points
++   16 :       LOGIN test (#3): "ACK 1 1 1 INDB 1 1 1"
+         3 times each "ACK 1 1 1" plus 1 for 10 LOGIN points
+         2 times each "INDB 1 1 1" towards 6 of 20 database points
++ 10.00 :      LOGOUT test (#4): "CLI1 1 1 1 1 3 CLI2 1 1 1 1 3"
+         Each client ("CLI1" and "CLI2") expected 1 ACK for a
+         LOGIN, LOGIN, REGISTER, LOGIN, and then 3 ACKs for LOGOUT.
+         Each of first 4 ACKS worth 0.5 point each, 1 point for
+         each LOGOUT ACK, for 10 LOGOUT points
++    6 :   FRIENDADD test (#5): "1 0 0 0 ( 0 1 2 1 ) DB 0 (missing the ACTIVE_YES/NO updates about confirmed friends)"
+         From maximum 10 points for adding friends are deducted the total number 4
+         (capped at 9) of per-line differences "( 0 1 2 1 )"
+         in expected friend status messages received by each of 4 connected clients
+         Fraction "INDB 0" of 3 points towards 20 database points
++    0 :    FRIENDRM test (#6): "0 0 0 0 ( 1 5 4 2 ) DB 0 (did get one of the friend status messages, but then segfaulted)"
+         From maximum 10 points for removing friends are deducted the total number 12
+         (capped at 10) of per-line differences "( 1 5 4 2 )"
+         in expected friend status messages received by each of 4 connected clients
+         Fraction "INDB 0" of 3 points towards 20 database points
++    2 : FRIENDSTAT1 test (#7): "0 0 ( 1 1 ) (segfaulted about half-way through test)"
+         From 4 points for friend status messages are deducted the total number 2 (capped at 4)
+         of per-line differences "( 1 1 )" in expected friend status messages
+         received by each of 2 connected clients
++    1 : FRIENDSTAT2 test (#8): "0 0 ( 2 3 ) (and then segfaulted)"
+         From 6 points for friend status messages are deducted the total number 5 (capped at 6)
+         of per-line differences "( 2 3 )" in expected friend status messages
+         received by each of 2 connected clients
++ 3.000 :    FRIENDIM test (#9): "0 0 0 ( 7 6 1 ) (but then segfaulted)"
+         From 10 points for IMing are deducted half the total number 14 (capped at 20) of per-line
+         differences "( 7 6 1 )" in expected error and status messages
+         received by each of 3 connected clients
++    0 :      ERRORS test (#10): "0 0 ( 12 8 ) (got one error message before segfaulting)"
+         From 10 points for error messages are deducted half the total number 20
+         (capped at 20) of per-line differences "( 12 8 )" in
+         expected messages received by each of 2 connected clients
++ 5 : From 10 points deducting one point for every segfault or glibc runtime error
+
+Grade: 62.307 % == 81/130

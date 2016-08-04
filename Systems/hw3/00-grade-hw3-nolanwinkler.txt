@@ -1,0 +1,26 @@
+nolanwinkler hw3 grade: 32/32
+
+Graded files from svn revision 38
+
+--------------------------------------
+Question 1 points and comments: 10/10
+Nice!
+
+Graded by: Joseph Ellis (ellisjoe)
+--------------------------------------
+
+Question 2 points and comments: 12/12
+Great job!
+
+Graded by: Melissa Grossbarth (mgrossbarth)
+--------------------------------------
+
+Question 3 points and comments: 10/10
+Great work!
+
+Graded by: Bob Ni (bobni)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us (the cs154 graders).
+Notify us by filling out and submitting the form here: http://goo.gl/fJSE1i
