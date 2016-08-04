@@ -1,0 +1,18 @@
+Nolan Winkler, nolanwinkler
+CS 152, Summer 2013
+Homework 7 Note
+
+To deal with the typdef placement issues, 
+separate lookup.h, lookup.c, and test_lookup.c files were made for accounts and ints.
+All of the account ones are the specified file names with an a at the end.
+All of the integer ones are the specified file names with an i at the end.
+
+The ONLY differences in these files are the typedefs and print functions, 
+everything is still done in terms of ValueType. Every single change is noted.
+The table works for general types, this was just the easiest way to test two types
+and means one does not have to manually manipulate typedef at compile time.
+
+Further clarification:
+to test test_lookup with accounts, "gcc test_lookupa.c lookupa.c"
+to test test_lookup with ints, "gcc test_lookupi.c lookupi.c"
+to test tsl, "gcc tsl.c lookupa.c"

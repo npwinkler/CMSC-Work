@@ -1,0 +1,13 @@
+hw7 grade: 45/80
+
+POINT DEDUCTIONS
+account.h:       2
+lookup.h:       10
+lookup.c:        5
+test_lookup.c:   8
+tsl.c:		 10
+functionality:   0
+
+Total Deduction 35
+
+Graded by Marc Kealhofer
