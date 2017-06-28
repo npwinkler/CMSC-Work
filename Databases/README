@@ -13,3 +13,5 @@ One thing I noticed is that there could have essentially been two paths from an 
 /* T-Shirt Sales Database Usage */
 When ordering shirts for my house's t-shirt sales, I took a Google Poll, imported the data into a .csv so it could be read by sqlite and then made my life easier by finding out how many shirts of each color and size combination I needed to order that way.
 
+/*Data Researcher/Analyst exam */
+Here is an examination that I did about pulling/collecting data from a database using SQL, describing the process for standardizing that data, and identifying potential sources from which to get revelant data.
