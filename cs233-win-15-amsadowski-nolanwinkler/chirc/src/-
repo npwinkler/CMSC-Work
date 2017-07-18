@@ -1,0 +1,149 @@
+/*
+ * Aidan Sadowski and Nolan Winkler
+ *
+ *  CMSC 23300 / 33300 - Networks and Distributed Systems
+ *
+ *  main() code for chirc project
+ *
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+#include "bstrlib.h"
+
+
+/* void bigBuffHandler(char* bigBuffer) {
+   //function code here
+   } */
+
+int main(int argc, char *argv[])
+{
+  int opt;
+  char *port = "6667", *passwd = NULL;
+
+  while ((opt = getopt(argc, argv, "p:o:h")) != -1)
+    switch (opt)
+      {
+      case 'p':
+	port = strdup(optarg);
+	break;
+      case 'o':
+	passwd = strdup(optarg);
+	break;
+      default:
+	printf("ERROR: Unknown option -%c\n", opt);
+	exit(-1);
+      }
+
+  if (!passwd)
+    {
+      fprintf(stderr, "ERROR: You must specify an operator password\n");
+      exit(-1);
+    }
+
+  /* Your code goes here */
+  int yes = 1;
+  int listeningSocket;// Used to listen for client connections
+  int handlingSocket;// Used to handle one specific client
+  struct sockaddr_in serverAddr; //99% sure don't need for IPv6
+  struct sockaddr_in clientAddr;//for clientAddr, do we need this to be local to the loop or not?? -> shouldn't be, right?
+
+  memset(&serverAddr, 0, sizeof(serverAddr));
+
+  /*create listening socket */
+  listeningSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+  /* Make sure listening socket was created correctly */
+  if(listeningSocket == -1)
+    {
+      perror("Could not open socket");
+      exit(-1);
+    }
+
+  serverAddr.sin_family = AF_INET;
+  serverAddr.sin_port = htons(atoi(port));
+  serverAddr.sin_addr.s_addr = INADDR_ANY; //do we have to use getaddrinfo for this too??
+  //getaddrinfo returns a linked listen of struct addrinfo's -> jsyk for when you have to use it -> in 154, I used it in pretty much just following Beej's guide
+
+  /* probably need to copy their making the address reusable thing, i.e. setsockopt */
+
+  setsockopt(listeningSocket, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)); //not sure what I'm doing with this, so should read about it
+
+  /*bind the listening socket */
+  if(bind(listeningSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr)) == -1)
+    {
+      perror("Socket bind() failed");
+      close(listeningSocket);
+      exit(-1);
+    }
+
+
+  /* listen */
+  if(listen(listeningSocket, 5) == -1) //all of Borja's examples have 5, so w/e
+    {
+      perror("Socket listen() failed");
+      close(listeningSocket);
+      exit(-1);
+    }
+
+  socklen_t sinSize = sizeof(struct sockaddr_in); //purely for accept()
+  int bigbuffsize, smallbuffsize, low, high;
+  low = 0;
+  bigbufsize = 2000;
+  smallbuffsize = 511;
+
+  
+  //SERVER SOCKET COMPLETELY SET UP BY NOW
+
+  // TEST char *msg = ":bar.example.com 001 user1 :Welcome to the Internet Relay Network user1!user1@foo.example.com\r\n"; // for test
+  //int nbytes; //number of bytes read from the socket
+  char bigBuffer[bigbuffsize+1];
+  char oneMessage[smallbuffsize]; //could also be 513 -> if we're gonna use strstr, which Aidan might not want to, but I think I want to experiment with now, should probs be 513 - strstr just gives us a pointer to the next char after "\n\r", so I think I really need his help with this part
+  // int msgNum; //for one test -> mmm, keeping track of and incrementing this might be hard
+
+  //should these guys above me be placed in the while loop or something so that they're local to the individual client instead of shared across all of them? -> Presumably will be different for when we implement threads, too -> also, how much should we just be looking at and essentially copying large amount of stuffs from our 154 server as like I totally implemented a lot of this stuff already pretty well, I think
+
+  //HANDLE THE CLIENTS
+
+  while(1) {
+    /* accept */
+    if( (handlingSocket = accept(listeningSocket, (struct sockaddr *) &clientAddr, &sinSize)) == -1)
+      //for clientAddr, do we need this to be local to the loop or not?? -> shouldn't be b/c it's a loop, right but idk
+      //getaddrinfo returns a linked listen of struct addrinfo's -> pretty sure we need to use it for clientAddr
+      {
+	perror("Socket accept() failed");
+	close(listeningSocket); //do we want this??
+	exit(-1);
+      }
+
+    /* recvs and sends and parses and shit */
+
+    // purely for test send(handlingSocket, msg, strlen(msg), 0); note it works
+    nbytes = recv(handlingSocket, bigBuffer, bigbuffsize, 0);
+    if(nbytes > 0){
+      
+    }
+
+    /* void bigBuffHandler(char* bigBuffer) {
+       //function code here
+       } */
+
+    //printf("Received message %d: \"%s\"", msgNum, oneMessage);
+
+
+    /* close handlingSocket */
+    //close(handlingSocket); don't need for 1a yet
+  }
+  /* while end */
+
+  /* close listeningSocket */
+  close(listeningSocket);
+  return 0;
+}
+

@@ -1,0 +1,12 @@
+*.o
+*.d
+*.o
+chirc/src/main.o
+chirc/src/main.d
+*.exe
+chirc/chirc.exe
+chirc/src/main.d
+chirc/src/main.o
+*.c~
+*.c#
+*.h~
